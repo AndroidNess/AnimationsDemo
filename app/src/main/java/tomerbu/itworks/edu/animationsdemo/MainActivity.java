@@ -4,11 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer catPlayer, cowPlayer, stagPlayer, turkeyPlayer;
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
         Animator anim = AnimatorInflater.loadAnimator(this, R.animator.blink);
         anim.setTarget(view);
         anim.start();
+
+        Button btn = (Button) findViewById(R.id.btnAnim);
+
+        btn.animate().alpha(0).start();
+
+        btn.animate().translationX(200).translationYBy(200).start();
+
+
+        ViewCompat.animate(btn).xBy(300).start();
 
     }
 
