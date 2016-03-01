@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class MainActivity extends AppCompatActivity {
     MediaPlayer catPlayer, cowPlayer, stagPlayer, turkeyPlayer;
 
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         btn.animate().translationX(200).translationYBy(200).start();
 
+
+        YoYo.with(Techniques.Tada)
+                .duration(700)
+                .playOn(findViewById(R.id.btnAnim));
 
         ViewCompat.animate(btn).xBy(300).start();
 
